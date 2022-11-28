@@ -1,1 +1,10 @@
-
+version: "3"
+services:
+  rust:
+    build:
+      context: "."
+    volumes:
+      - "./data:/app/server"
+    ports:
+      - "28015:28015/udp"
+      - "28016:28016"
