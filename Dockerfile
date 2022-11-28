@@ -20,4 +20,4 @@ ENV AUTOPAUSE="true" \
 
 EXPOSE 7777/udp 15000/udp 15777/udp
 
-ENTRYPOINT [ "/init.sh" ]
+ENTRYPOINT [ "/scripts/init.sh" ]
