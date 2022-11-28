@@ -18,6 +18,6 @@ WORKDIR /config
 ENV AUTOPAUSE="true" \
     AUTOSAVEINTERVAL="300"
 
-EXPOSE 7777/udp 15000/udp 15777/udp
+EXPOSE 28015/udp 28016
 
 ENTRYPOINT [ "/scripts/init.sh" ]
