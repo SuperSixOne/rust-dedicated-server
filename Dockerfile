@@ -10,7 +10,7 @@ RUN set -x \
 RUN mkdir -p /config \
  && chown steam:steam /config
 
-COPY init.sh /
+COPY --chown=steam:steam init.sh /
 
 COPY --chown=steam:steam run.sh /home/steam/
 
