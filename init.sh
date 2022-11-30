@@ -33,11 +33,11 @@ fi
 ramAvailable=$(awk '/MemAvailable/ {printf( "%d\n", $2 / 1024000 )}' /proc/meminfo)
 printf "Checking available memory...%sGB detected\\n" "${ramAvailable}"
     
-if [[ "$ramAvailable" -lt 12 ]]; then
-    printf "You have less than the required 12GB minmum (%sGB detected) of available RAM to run the game server.\\nIt is likely that the server will fail to load properly.\\n" "${ramAvailable}"
+if [[ "$ramAvailable" -lt 16 ]]; then
+    printf "You have less than the required 16GB minmum (%sGB detected) of available RAM to run the game server.\\nIt is likely that the server will fail to load properly.\\n" "${ramAvailable}"
 fi
 
-mkdir -p /config/backups /config/gamefiles /config/saves "${GAMECONFIGDIR}/Config/LinuxServer" "${GAMECONFIGDIR}/Logs" "${GAMECONFIGDIR}/SaveGames/server" "${GAMESAVESDIR}/server" || exit 1
+mkdir -p "${GAMEFILESDIR}" "${GAMELOGDIR}" || exit 1
 
 NUMCHECK='^[0-9]+$'
 
