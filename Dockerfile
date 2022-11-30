@@ -10,7 +10,7 @@ RUN set -x \
 RUN mkdir -p /config \
  && chown steam:steam /config
 
-COPY --chown=steam init.sh /
+COPY --chmod=755 init.sh /
 
 COPY --chown=steam:steam run.sh /home/steam/
 
@@ -36,5 +36,4 @@ ENV STEAMAPPID="258550" \
 
 EXPOSE 28015/udp 28016
 
-#ENTRYPOINT [ "/init.sh" ]
-CMD ["bash"]
+ENTRYPOINT [ "/init.sh" ]
