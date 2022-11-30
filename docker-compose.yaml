@@ -3,10 +3,10 @@ services:
     rust-server:
         container_name: 'rust-server'
         hostname: 'rust-server'
-        image: 'a:latest'
+        image: 'mihalikcs/rustdedicatedserver:latest'
         ports:
-            - '7777:7777/udp'
-            - '15000:15000/tcp'
+            - '28015:28015/udp'
+            - '28016:28016/tcp'
         volumes:
             - '/path/to/config:/config'
         environment:
