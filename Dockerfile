@@ -12,7 +12,7 @@ RUN mkdir -p /config \
 
 COPY --chmod=755 init.sh /
 
-COPY --chown=steam:steam run.sh /home/steam/
+COPY --chown=steam:steam --chmod=755 run.sh /home/steam/ 
 
 WORKDIR /config
 
