@@ -36,4 +36,5 @@ ENV STEAMAPPID="258550" \
 
 EXPOSE 28015/udp 28016
 
-ENTRYPOINT [ "/init.sh" ]
+#ENTRYPOINT [ "/init.sh" ]
+CMD ["bash"]
