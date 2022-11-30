@@ -1,10 +1,25 @@
-version: "3"
+version: '3'
 services:
-  rust:
-    build:
-      context: "."
-    volumes:
-      - "./data:/app/server"
-    ports:
-      - "28015:28015/udp"
-      - "28016:28016"
+    rust-server:
+        container_name: 'rust-server'
+        hostname: 'rust-server'
+        image: 'a:latest'
+        ports:
+            - '7777:7777/udp'
+            - '15000:15000/tcp'
+        volumes:
+            - '/path/to/config:/config'
+        environment:
+            - MAXPLAYERS=50
+            - PGID=1000
+            - PUID=1000
+            - SKIPUPDATE=false
+            - STEAMBETA=false
+            - SERVERSAVEINTERVAL=600
+            - SERVERHOSTNAME=""
+            - SERVERDESCRIPTION=""
+            - SERVERWORLDSIZE=2500
+            - SERVERSEED=35234
+            - RCONSERVERPASSWORD=""
+            - RCONMODE=1
+        restart: unless-stopped
