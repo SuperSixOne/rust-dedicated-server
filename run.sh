@@ -38,6 +38,9 @@ exec "${GAMEFILESDIR}/RustDedicated" batchmode \
 +server.description "${SERVERDESCRIPTION}" \
 +server.saveinterval $SERVERSAVEINTERVAL \
 +server.seed $SERVERSEED \
++server.eac $SERVEREAC \
++server.pve $SERVERPVEMODE \
++server.steamgroup $SERVERSTEAMGROUP
 +server.identity "docker" \
 +rcon.port $RCONSERVERPORT \
 +rcon.password "${RCONSERVERPASSWORD}" \
